@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*---VARIABLES---*/
+/*FONTS*/
+:root {
+    --ff-text: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    --fs: clamp(1rem, 2.2vh, 1.5rem); /*tipo de fuente fluida usando la función camp(). Escala el texto en un minimo de 1rem, un tamaño preferido de 2.2vh y un maximo de 1.5rem*/
+    /*colores*/
+    --fondo: #27282b;
+    --footer-color: rgb(87, 82, 82);
+    --fondo-header:  #fff9f9;
+    --color-header: #3a1919;
+    --fondo-tarjeta: #4d4545;
+    --resaltado: #eb0f0f;
+    --texto-principal: #ffffff;
+    --color-link: #fff;
+    --texto-footer: #fff;
+    --color-borde: #000;
+    --fondo-producto: #302e2da1;
+    --boton-fondo: #3f3f44;
+    --boton-color: #e70000;
+    --boton-hover: #000;
+
+    /* padding*/
+    --padding-texto: 0.25em 2.5%;
+
+    /*box shadow*/
+    --sombra-producto: 0 0 20px 3px rgba(0, 0, 0, 0.438);
+
+}
+
+html {
+    font-size: var(--fs);
+}
+
+body {
+    font-size: 100%;
+    font-family: var(--ff-text);
+    color: var(--texto-principal);
+    background-color: var(--fondo);
+}
+
+/*----HEADER----*/
+#header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: sticky;
+    top: 0;
+    padding: 0 1rem;
+    background-color: var(--fondo-header);
+    padding: var(--padding-texto);
+    
+}
+
+.nombre-logo {
+  display: flex; /*permite que el logo y el texto se vean como fila, es decir, uno al lado del otro*/
+  align-items: center;
+  gap: 10px;
+}
+
+#header-img {
+  width: 50px;
+  height: auto;
+}
+
+#header a,
+.nav-link{
+    color: var(--color-header);
+    text-decoration: none;
+    padding: 10px;
+}
+
+#header a:hover, 
+.nav-link:hover{
+  color: var(--resaltado);
+}
+
+
+/*--- MAIN ---*/
+
+#cta {
+  margin: 1.5rem 1rem;
+  padding: 1rem;
+  font-size: 2rem;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+#cta h2 {
+    margin-bottom: 1rem;
+}
+
+#form #email {
+    width: 30vw;
+    margin: auto;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+#submit {
+    width: 15rem;
+    height: 3rem;
+    padding: 0.5rem;
+    border-radius: 3rem;
+    font-size: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    background-color: var(--boton-fondo);
+    color: var(--boton-color);
+}
+
+#submit:hover {
+    background-color: var(--boton-hover);
+}
+
+#features {
+    padding: var(--padding-texto);
+    margin: 0 auto;
+}
+
+#features p {
+    margin-bottom: 2rem;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;   
+}
+
+#email:focus-visible {
+  outline: 2px solid var(--resaltado);
+}
+
+#email {
+    width: 20rem; /*ancho del input*/
+    border: 2px solid black;
+    margin: auto;
+    padding: 0.2rem;
+    
+}
+.resaltado, .price {
+    color: var(--resaltado);
+}
+
+/*contenedor de productos*/
+#demo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /*se utiliza el display flex para poder centrar el*/
+  align-items: center;
+  gap: 1.5rem; /*espacio entre titulo y video*/
+  padding: 1rem;
+  margin: 1rem 2rem;
+}
+
+#products {
+    padding: 1rem;
+    margin: 1rem 2rem;
+    display: flex; /*para que el contenido se vea en fila y no en columnas*/
+    justify-content: center;
+    align-items: stretch;
+    gap: 2.5rem; /*espacio entre cada tarjeta de producto*/
+}
+
+#products h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.product-box {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--fondo-tarjeta);
+    width: 50%;
+    align-items: center;
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: var(--sombra-producto);
+}
+
+.product-box > img {
+    background-color: var(--fondo-producto);
+    border-radius: 20px;
+    margin: 1rem;
+}
+
+.title-desc {
+    font-weight: 700;
+    margin: 0.5rem;
+}
+/*--- FOOTER ---*/
+footer {
+    display: flex;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--footer-color);
+    flex-direction: column;
+}
+
+.copyright {
+    align-self: flex-end;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex; /*dirección en fila*/
+    align-self: flex-end;
+    list-style-type: none; /*para que no se muestre los puntos del listado*/
+    gap: 10px; /*espacio entre cada li*/
+}
+
+.footer-links a {
+    color: var(--texto-principal);
+    text-decoration: none;
+    display: block;
+    padding: 3px;
+    transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 1000px){
+    body {
+        font-size: 80%;
+    }
+
+    #features {
+        margin: 0 0.6rem;
+    }
+
+    #header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+    }
+
+    #submit {
+        width: 50vw;
+        height: 5vh;
+        font-size: 1.2rem;
+    }
+    #header a {
+        font-size: 1.2rem;
+    }
+
+    #nav-bar a{
+        font-size: 20px;
+    }
+
+    #products {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    #email {
+        width: 100%;
+    }
+
+    #cta {
+        font-size: 1rem;
+    }
+
+    .product-box {
+        width: 100%;
+        max-width: 400px;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    #products h3 {
+        font-size: 1.2rem;
+    }
+
+    #products p {
+        font-size: 0.8rem;
+    }
+
+    #products ul {
+        padding: 0.5rem 1rem;
+    }
+
+}
